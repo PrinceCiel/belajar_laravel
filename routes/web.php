@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/Siswa', function () {
+    $data_siswa = ['Kyy','skylar','hijume','rine','luke','khezcute'];
+    return view('tampil', compact('data_siswa'));
+});
+
 Route::get('/Home', function () {
     return 'Selamat Datang Di Halaman Home';
 });
