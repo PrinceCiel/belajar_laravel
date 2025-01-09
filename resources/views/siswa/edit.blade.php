@@ -8,8 +8,9 @@
                 <div class="card-header">Ubah Data Siswa</div>
 
                 <div class="card-body">
-                    <form action="{{ route('siswa.store') }}"  method="post" enctype="multipart/form-data">
+                    <form action="{{ route('siswa.update', $siswa->id) }}"  method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="form-group mb-3">
                             <label>NIS</label>
                             <input type="number" class="form-control" name="nis" value="{{ $siswa->nis }}">
@@ -31,7 +32,7 @@
                                 <option value="XI RPL 3">XI RPL 3</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary" name="save">Save</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>

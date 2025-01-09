@@ -79,7 +79,14 @@ class SiswasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $siswa = Siswa::findOrFail($id);
+        $siswa->nis             = $request->nis;
+        $siswa->nama            = $request->nama;
+        $siswa->jenis_kelamin   = $request->jenis_kelamin;
+        $siswa->kelas           = $request->kelas;
+        $siswa->save();
+
+        return redirect()->route('siswa.index')->with('success', 'Data Berhasil Diupdate!!');
     }
 
     /**
