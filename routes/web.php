@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\SiswasController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Post;
+use App\Models\Barang;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -118,3 +121,24 @@ Route::get('/latihan/{nama}/{tlp}/{jenis}/{namabrg}/{jumlah}/{bayar}', function(
            "Potongan : ".$potongan."<hr>".
            "Total Pembayaran : ".$totalbersih."<br>";
 });
+
+
+Route::get('/post', [PostsController::class, 'menampilkan']);
+Route::get('/barang', [PostsController::class, 'menampilkan2']);
+
+// Route::get('/barang', function () {
+//     $barang = Barang::where('harga', '>', 10000000)->get();
+//     return view('tampil_barang', compact('barang'));
+// });
+
+
+
+//CRUD 
+Route::resource('siswa', SiswasController::class);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
