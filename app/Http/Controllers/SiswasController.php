@@ -55,7 +55,8 @@ class SiswasController extends Controller
      */
     public function show($id)
     {
-        //
+        $siswa = Siswa::findOrFail($id);
+        return view('siswa.show', compact('siswa'));
     }
 
     /**
@@ -97,6 +98,8 @@ class SiswasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $siswa = Siswa::findOrFail($id);
+        $siswa->delete();
+        return redirect()->route('siswa.index')->with('success', 'Data Berhasil Dihapus!!');
     }
 }

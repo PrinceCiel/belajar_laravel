@@ -31,8 +31,12 @@
                             <td>{{ $data->kelas }}</td>
                             <td>
                                 <a href="{{ route('siswa.edit', $data->id) }}" class="btn btn-secondary">Edit</a>
-                                <a href="" class="btn btn-warning">Show</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+                                <a href="{{ route('siswa.show', $data->id) }}" class="btn btn-warning">Show</a>
+                                <form action="{{ route('siswa.destroy', $data->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
