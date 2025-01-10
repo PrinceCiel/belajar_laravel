@@ -12,6 +12,12 @@ class SiswasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $siswa = Siswa::all();
@@ -42,7 +48,7 @@ class SiswasController extends Controller
         $siswa->jenis_kelamin   = $request->jenis_kelamin;
         $siswa->kelas           = $request->kelas;
         $siswa->save();
-
+        
         return redirect()->route('siswa.index')->with('success', 'Data Berhasil Ditambahkan!!');
         
     }

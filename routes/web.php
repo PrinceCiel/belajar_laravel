@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SiswasController;
+use App\Http\Controllers\PpdbController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Barang;
@@ -135,6 +136,7 @@ Route::get('/barang', [PostsController::class, 'menampilkan2']);
 
 //CRUD 
 Route::resource('siswa', SiswasController::class);
+Route::resource('ppdb', PpdbController::class);
 
 
 Auth::routes();

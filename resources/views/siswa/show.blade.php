@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Ubah Data Siswa</div>
+                <div class="card-header">
+                    <a href="{{ route('siswa.index') }}">Back</a>
+                    Ubah Data Siswa 
+                </div>
 
                 <div class="card-body">
                     @csrf
@@ -25,11 +28,10 @@
                     </div>
                     <div class="form-group mb-3">
                         <label>Kelas</label><br>
-                        <select class="form-control" name="kelas">
+                        <select class="form-control" name="kelas" disabled>
                             <option value="XI RPL 1" selected disabled>{{ $siswa->kelas }}</option>
                         </select>
                     </div>
-                    <a href="{{ route('siswa.index') }}" class="btn btn-primary">Back</a>
                 </div>
             </div>
         </div>
