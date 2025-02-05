@@ -31,6 +31,10 @@
                                 <option value="XI RPL 3">XI RPL 3</option>
                             </select>
                         </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                            <input type="file" class="form-control" id="inputGroupFile01" name="cover">
+                        </div>
                         <button type="submit" class="btn btn-primary" name="save">Save</button>
                     </form>
                 </div>

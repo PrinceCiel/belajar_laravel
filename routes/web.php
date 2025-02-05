@@ -2,10 +2,26 @@
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SiswasController;
+use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\PpdbController;
+use App\Http\Controllers\TeleponController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PenerbitController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\pembeliController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Barang;
+use App\Models\Customer;
+use App\Models\Order;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -137,10 +153,20 @@ Route::get('/barang', [PostsController::class, 'menampilkan2']);
 //CRUD 
 Route::resource('siswa', SiswasController::class);
 Route::resource('ppdb', PpdbController::class);
-
+Route::resource('pengguna', PenggunaController::class);
+Route::resource('telepon', TeleponController::class);
+Route::resource('kategori', KategoriController::class);
+Route::resource('produk', ProdukController::class);
+Route::resource('product', ProductController::class);
+Route::resource('customer', CustomerController::class);
+Route::resource('order', OrderController::class);
+Route::resource('penerbit', PenerbitController::class);
+Route::resource('buku', BukuController::class);
+Route::resource('genre', GenreController::class);
+Route::resource('transaksi', TransaksiController::class);
+Route::resource('pembeli', PembeliController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 

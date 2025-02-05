@@ -32,6 +32,10 @@
                             <option value="XI RPL 1" selected disabled>{{ $siswa->kelas }}</option>
                         </select>
                     </div>
+                    <div class="form-group mb-3">
+                        <label>Upload</label>
+                        <img src="{{ asset('/images/siswa/' . $siswa->cover)}}" width="100">
+                    </div>
                 </div>
             </div>
         </div>
